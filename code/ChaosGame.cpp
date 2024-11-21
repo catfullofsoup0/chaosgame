@@ -9,6 +9,27 @@
 using namespace sf;
 using namespace std;
 
+
+// Displays instructions for the user using the Text class.
+// Make sure this is used btwn window.display() and window.clear()
+void userInstructions()
+{
+ sf::Font font;
+
+ if (!font.loadFromFile("SpaceMono-Regular.ttf"))
+ {
+	cout << "Font did not load" << endl; // make sure it's a font you put in the repo
+ }
+
+ sf::Text text;
+ text.setFont(font);
+ text.setString("Click 3 spots to make a triangle. The 4th click is where your fractal originates.");
+ text.setFillColor(sf::Color::Magenta);
+ text.setStyle(sf::Text::Bold | sf::Text::Underlined);
+
+ window.draw(text);
+}
+
 int main()
 {
 	// Create a video mode object
