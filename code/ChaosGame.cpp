@@ -9,27 +9,8 @@
 using namespace sf;
 using namespace std;
 
-/*
-// Displays instructions for the user using the Text class.
-// Make sure this is used btwn window.display() and window.clear()
-void userInstructions()
-{
- sf::Font font;
 
- if (!font.loadFromFile("SpaceMono-Regular.ttf"))
- {
-	cout << "Font did not load" << endl; // make sure it's a font you put in the repo
- }
 
- sf::Text text;
- text.setFont(font);
- text.setString("Click 3 spots to make a triangle. The 4th click is where your fractal originates.");
- text.setFillColor(sf::Color::Magenta);
- text.setStyle(sf::Text::Bold | sf::Text::Underlined);
-
- window.draw(text);
-}
-*/
 
 int main()
 {
@@ -100,11 +81,28 @@ int main()
 		****************************************
 		*/
 		window.clear();
+
+		// User instructions with font and text begins.
+		sf::Font font;
+ 		if (!font.loadFromFile("SpaceMono-Regular.ttf"))
+ 		{
+			cout << "Font did not load" << endl;
+ 		}
+
+ 		sf::Text text;
+ 		text.setFont(font);
+ 		text.setString("Click 3 spots to make a triangle. The 4th click is where your will fractal originate.");
+ 		text.setCharacterSize(36);
+		text.setFillColor(sf::Color::Magenta);
+ 		//text.setStyle(sf::Text::Bold | sf::Text::Underlined);
+		window.draw(text);
+		// User instructions ends.
+
 		for(int i = 0; i < vertices.size(); i++)
 		{
 		    RectangleShape rect(Vector2f(10,10));
 		    rect.setPosition(Vector2f(vertices[i].x, vertices[i].y));
-		    rect.setFillColor(Color::Blue);
+		    rect.setFillColor(Color::Cyan);
 		    window.draw(rect);
 		}
 		window.display();
