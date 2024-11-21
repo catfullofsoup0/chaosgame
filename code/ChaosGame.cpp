@@ -9,7 +9,7 @@
 using namespace sf;
 using namespace std;
 
-
+/*
 // Displays instructions for the user using the Text class.
 // Make sure this is used btwn window.display() and window.clear()
 void userInstructions()
@@ -29,6 +29,7 @@ void userInstructions()
 
  window.draw(text);
 }
+*/
 
 int main()
 {
