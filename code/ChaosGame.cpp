@@ -108,6 +108,7 @@ int main()
 		// Triangle drawing starts.
 		CircleShape triangle(80.f, 3);
 		triangle.setFillColor(Color::Yellow);
+		window.draw(triangle);
 		// Triangle drawing ends.
 		window.display();
 	}
