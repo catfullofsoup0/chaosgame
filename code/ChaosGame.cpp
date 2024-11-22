@@ -105,17 +105,10 @@ int main()
 		    window.draw(rect);
 		}
 
-		// Line drawing starts.
-		for(int i = 0; i < vertices.size(); i++)
-		{
-			Vertex line[] =
-			{
-				Vertex(Vector2f(vertices[i].x, vertices[i].y)),
-				Vertex(Vector2f(vertices[i+1].x, vertices[i+1].y))
-			};
-			window.draw(line, 2, Lines);
-		}
-		// Line drawing ends.
+		// Triangle drawing starts.
+		CircleShape triangle(80.f, 3);
+		triangle.setFillColor(Color::Yellow);
+		// Triangle drawing ends.
 		window.display();
 	}
 }
